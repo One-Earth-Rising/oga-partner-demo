@@ -12,7 +12,7 @@ const PARTNER_INFO = {
 };
 
 const CHARACTERS = [
-  { id: "tony", name: "TONY THE TIGER", label: "Frosted Flakes", color: "#FF6B1A", tileImage: "/images/tony-tile.webp", detailImage: "/images/tony-tile.webp", gameImages: { apex: "/images/tony-apex.webp" } },
+  { id: "tony", name: "TONY THE TIGER", label: "Frosted Flakes", color: "#FF6B1A", tileImage: "/images/Tony/Tony The Tiger.png", detailImage: "/images/Tony/Tony The Tiger.png", gameImages: { apex: "/images/Tony/tony_apex.png", fortnite: "/images/Tony/tony_fortnite.png", minecraft: "/images/Tony/tony_minecraft.png", roblox: "/images/Tony/tony_roblox.png" } },
   { id: "toucan", name: "TOUCAN SAM", label: "Froot Loops", color: "#E81C8B", tileImage: null, detailImage: null, gameImages: {} },
   { id: "snap", name: "SNAP", label: "Rice Krispies", color: "#4ECBFF", tileImage: null, detailImage: null, gameImages: {} },
   { id: "digem", name: "DIG'EM FROG", label: "Honey Smacks", color: "#7ED321", tileImage: null, detailImage: null, gameImages: {} },
