@@ -17,7 +17,7 @@ const CHARACTERS = [
   { id: "snap", name: "SNAP", label: "Rice Krispies", color: "#4ECBFF", tileImage: null, detailImage: null, gameImages: {} },
   { id: "digem", name: "DIG'EM FROG", label: "Honey Smacks", color: "#7ED321", tileImage: null, detailImage: null, gameImages: {} },
   { id: "cornelius", name: "CORNELIUS", label: "Corn Flakes", color: "#FFD700", tileImage: null, detailImage: null, gameImages: {} },
-  { id: "buzz", name: "BUZZ BEE", label: "Honey Nut Cheerios", color: "#FFB800", tileImage: null, detailImage: null, gameImages: {} },
+  { id: "buzz", name: "BUZZ BEE", label: "Honey Nut Cheerios", color: "#FFB800", tileImage: "/images/Buzz/Buzz Bee.png", detailImage: "/images/Buzz/Buzz Bee.png", gameImages: { apex: "/images/Buzz/buzz_apex.png", fortnite: "/images/Buzz/buzz_fortnite.png", minecraft: "/images/Buzz/buzz_minecraft.png", roblox: "/images/Buzz/buzz_roblox.png" } },
   { id: "coco", name: "COCO MONKEY", label: "Coco Pops", color: "#8B4513", tileImage: null, detailImage: null, gameImages: {} },
   { id: "crackle", name: "CRACKLE", label: "Rice Krispies", color: "#FF4444", tileImage: null, detailImage: null, gameImages: {} },
   { id: "pop", name: "POP", label: "Rice Krispies", color: "#9C27B0", tileImage: null, detailImage: null, gameImages: {} },
