@@ -60,8 +60,8 @@ const CHARACTERS = [
     name: "TOUCAN SAM",
     label: "Froot Loops",
     color: "#E81C8B",
-    tileImage: null,                          // → Replace: "/images/toucan-tile.png"
-    detailImage: null,
+    tileImage: "/images/Toucan Sam.png",                          // → Replace: "/images/toucan-tile.png"
+    detailImage: "/images/Toucan Sam.png",
     gameImages: {},
   },
   {
@@ -96,8 +96,8 @@ const CHARACTERS = [
     name: "BUZZ BEE",
     label: "Honey Nut Cheerios",
     color: "#FFB800",
-    tileImage: null,
-    detailImage: null,
+    tileImage: "/images/Buzz Bee.png",
+    detailImage: "/images/Buzz Bee.png",
     gameImages: {},
   },
   {
@@ -105,8 +105,8 @@ const CHARACTERS = [
     name: "COCO MONKEY",
     label: "Coco Pops",
     color: "#8B4513",
-    tileImage: null,
-    detailImage: null,
+    tileImage: "/images/Coco Monkey.png",
+    detailImage: "/images/Coco Monkey.png",
     gameImages: {},
   },
   {
