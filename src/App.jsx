@@ -60,8 +60,8 @@ const CHARACTERS = [
     name: "TOUCAN SAM",
     label: "Froot Loops",
     color: "#E81C8B",
-    tileImage: "/images/Toucan Sam.png",                          // → Replace: "/images/toucan-tile.png"
-    detailImage: "/images/Toucan Sam.png",
+    tileImage: "/images/Tucan Sam.png",                          // → Replace: "/images/toucan-tile.png"
+    detailImage: "/images/Tucan Sam.png",
     gameImages: {},
   },
   {
@@ -78,8 +78,8 @@ const CHARACTERS = [
     name: "DIG'EM FROG",
     label: "Honey Smacks",
     color: "#7ED321",
-    tileImage: null,
-    detailImage: null,
+    tileImage: "/images/Dig'em Frog.png",
+    detailImage: "/images/Dig'em Frog.png",
     gameImages: {},
   },
   {
