@@ -45,8 +45,8 @@ const CHARACTERS = [
     name: "TONY THE TIGER",
     label: "Frosted Flakes",
     color: "#FF6B1A",
-    tileImage: "/images/tony-tile.webp",
-    detailImage: "/images/tony-tile.webp",    // Can use a different crop
+    tileImage: "/images/Tony The Tiger.png",
+    detailImage: "/images/Tony The Tiger.png",    // Can use a different crop
     gameImages: {
       // Uncomment when you have pre-rendered game-style art:
       // fortnite: "/images/tony-fortnite.png",
