@@ -45,14 +45,13 @@ const CHARACTERS = [
     name: "TONY THE TIGER",
     label: "Frosted Flakes",
     color: "#FF6B1A",
-    tileImage: "/images/Tony The Tiger.png",
-    detailImage: "/images/Tony The Tiger.png",    // Can use a different crop
+    tileImage: "/images/Tony/Tony The Tiger.png",
+    detailImage: "/images/Tony/Tony The Tiger.png",    // Can use a different crop
     gameImages: {
-      // Uncomment when you have pre-rendered game-style art:
-      // fortnite: "/images/tony-fortnite.png",
-      // roblox:   "/images/tony-roblox.png",
-      // minecraft:"/images/tony-minecraft.png",
-      // apex:     "/images/tony-apex.png",
+      fortnite:  "/images/Tony/tony_fortnite.png",   // ← fully different image
+    roblox:    "/images/Tony/tony_roblox.png",      // ← can be animated GIF
+    minecraft: "/images/Tony/tony_minecraft.png",
+    apex:      "/images/Tony/tony_apex.png",
     },
   },
   {
