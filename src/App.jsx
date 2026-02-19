@@ -26,8 +26,8 @@ const CHARACTERS = [
 const GAMES = [
   { id: "fortnite", name: "FORTNITE", genre: "Battle Royale", color: "#7B2FBE", icon: "⚡", style: "Stylized 3D • Cel-Shaded", desc: "Cel-shaded with bold outlines and vibrant, stylized proportions", filter: "saturate(1.6) contrast(1.2) brightness(1.1) hue-rotate(-15deg)" },
   { id: "roblox", name: "ROBLOX", genre: "Sandbox", color: "#E2231A", icon: "🧊", style: "Blocky Voxel • Low-Poly", desc: "Simplified blocky geometry with flat colors and iconic proportions", filter: "saturate(0.6) contrast(1.4) brightness(1.05)" },
-  { id: "minecraft", name: "MINECRAFT", genre: "Sandbox Survival", color: "#5D8C3E", icon: "⛏️", style: "Pixel Block • 16-Bit", desc: "Pixel-art textures on cubic geometry with limited color palettes", filter: "saturate(0.4) contrast(1.5) brightness(0.95) hue-rotate(-10deg)" },
-  { id: "apex", name: "APEX LEGENDS", genre: "Hero Shooter", color: "#CD3333", icon: "🎯", style: "High-Fidelity • Realistic", desc: "Photorealistic rendering with detailed textures and realistic lighting", filter: "saturate(1.1) contrast(1.2) brightness(0.85) sepia(0.2)" },
+  { id: "animal_crossing", name: "ANIMAL CROSSING", genre: "Life Simulation", color: "#5D8C3E", icon: "⛏️", style: "Cozy • Miniature Chibi", desc: "Softly lit, rounded geometry with warm color palettes and a miniature, toy-box aesthetic", filter: "saturate(0.4) contrast(1.5) brightness(0.95) hue-rotate(-10deg)" },
+  { id: "crash", name: "CRASH BANDICOOT", genre: "3D Platformer", color: "#CD3333", icon: "🎯", style: "Zany Cartoon • Exaggerated", desc: "Vibrant, stylized environments with exaggerated character proportions, dynamic angles, and squash-and-stretch animations", filter: "saturate(1.1) contrast(1.2) brightness(0.85) sepia(0.2)" },
 ];
 
 // ╔══════════════════════════════════════════════════════════════════════╗
