@@ -18,7 +18,7 @@ const CHARACTERS = [
   { id: "digem", name: "DIG'EM FROG", label: "Honey Smacks", color: "#7ED321", tileImage: "/images/Frog/Digem Frog.png", detailImage: "/images/Frog/Digem Frog.png", gameImages: { crash: "/images/Frog/frog_crash.png", fortnite: "/images/Frog/frog_fortnite.png", animal_crossing: "/images/Frog/frog_animalcrossing.png", roblox: "/images/Frog/frog_roblox.png" } },
   { id: "cornelius", name: "CORNELIUS", label: "Corn Flakes", color: "#FFD700", tileImage: null, detailImage: null, gameImages: {} },
   { id: "buzz", name: "BUZZ BEE", label: "Honey Nut Cheerios", color: "#FFB800", tileImage: "/images/Buzz/Buzz Bee.png", detailImage: "/images/Buzz/Buzz Bee.png", gameImages: { crash:"/images/Buzz/buzz_crash.png" , fortnite:"/images/Buzz/buzz_fortnite.png" , animal_crossing:"/images/Buzz/buzz_animalcrossing.png" , roblox:"/images/Buzz/buzz_roblox.png" } },
-  { id: "coco", name: "COCO MONKEY", label: "Coco Pops", color: "#8B4513", tileImage: null, detailImage: null, gameImages: {} },
+  { id: "coco", name: "COCO MONKEY", label: "Coco Pops", color: "#8B4513", tileImage: "/images/Coco/Coco Monkey.png", detailImage: "/images/Coco/Coco Monkey.png", gameImages: { crash: "/images/Coco/coco_crash.png", fortnite: "/images/Coco/coco_fortnite.png", animal_crossing: "/images/Coco/coco_animalcrossing.png", roblox: "/images/Coco/coco_roblox.png" } },
   { id: "crackle", name: "CRACKLE", label: "Rice Krispies", color: "#FF4444", tileImage: null, detailImage: null, gameImages: {} },
   { id: "pop", name: "POP", label: "Rice Krispies", color: "#9C27B0", tileImage: null, detailImage: null, gameImages: {} },
 ];
