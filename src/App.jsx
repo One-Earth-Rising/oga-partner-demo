@@ -34,7 +34,7 @@ const CHARACTERS = [
     tileImage: "/images/Tony/Tony The Tiger.png",
     detailImage: "/images/Tony/Tony The Tiger.png",
     games: ["fortnite", "roblox", "animal_crossing", "crash"],
-    gameImages: { crash: "/images/Tony/tony_crash.png", fortnite: "/images/Tony/tony_fortnite.png", animal_crossing: "/images/Tony/tony_animalcrossing.png", roblox: "/images/Tony/tony_roblox.png" },
+    gameImages: { crash: "/images/Tony/tony_crash.gif", fortnite: "/images/Tony/tony_fortnite.png", animal_crossing: "/images/Tony/tony_animalcrossing.png", roblox: "/images/Tony/tony_roblox.png" },
   },
   {
     id: "toucan", name: "TOUCAN SAM", label: "Froot Loops", color: "#E81C8B",
