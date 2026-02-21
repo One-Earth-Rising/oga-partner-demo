@@ -11,23 +11,83 @@ const PARTNER_INFO = {
   cta: "WANT TO ACTIVATE YOUR IP ACROSS MULTIPLE GAMES?",
 };
 
-const CHARACTERS = [
-  { id: "tony", name: "TONY THE TIGER", label: "Frosted Flakes", color: "#FF6B1A", tileImage: "/images/Tony/Tony The Tiger.png", detailImage: "/images/Tony/Tony The Tiger.png", gameImages: { crash: "/images/Tony/tony_crash.png", fortnite: "/images/Tony/tony_fortnite.png", animal_crossing: "/images/Tony/tony_animalcrossing.png", roblox: "/images/Tony/tony_roblox.png" } },
-  { id: "toucan", name: "TOUCAN SAM", label: "Froot Loops", color: "#E81C8B", tileImage: "/images/Toucan/Toucan Sam.png", detailImage: "/images/Toucan/Toucan Sam.png", gameImages: { crash: "/images/Toucan/toucan_crash.png", fortnite: "/images/Toucan/toucan_fortnite.png", animal_crossing: "/images/Toucan/toucan_animalcrossing.png", roblox: "/images/Toucan/toucan_roblox.png" } },
-  { id: "snap", name: "SNAP", label: "Rice Krispies", color: "#4ECBFF", tileImage: null, detailImage: null, gameImages: {} },
-  { id: "digem", name: "DIG'EM FROG", label: "Honey Smacks", color: "#7ED321", tileImage: "/images/Frog/Digem Frog.png", detailImage: "/images/Frog/Digem Frog.png", gameImages: { crash: "/images/Frog/frog_crash.png", fortnite: "/images/Frog/frog_fortnite.png", animal_crossing: "/images/Frog/frog_animalcrossing.png", roblox: "/images/Frog/frog_roblox.png" } },
-  { id: "cornelius", name: "CORNELIUS", label: "Corn Flakes", color: "#FFD700", tileImage: null, detailImage: null, gameImages: {} },
-  { id: "buzz", name: "BUZZ BEE", label: "Honey Nut Cheerios", color: "#FFB800", tileImage: "/images/Buzz/Buzz Bee.png", detailImage: "/images/Buzz/Buzz Bee.png", gameImages: { crash:"/images/Buzz/buzz_crash.png" , fortnite:"/images/Buzz/buzz_fortnite.png" , animal_crossing:"/images/Buzz/buzz_animalcrossing.png" , roblox:"/images/Buzz/buzz_roblox.png" } },
-  { id: "coco", name: "COCO MONKEY", label: "Coco Pops", color: "#8B4513", tileImage: "/images/Coco/Coco Monkey.png", detailImage: "/images/Coco/Coco Monkey.png", gameImages: { crash: "/images/Coco/coco_crash.png", fortnite: "/images/Coco/coco_fortnite.png", animal_crossing: "/images/Coco/coco_animalcrossing.png", roblox: "/images/Coco/coco_roblox.png" } },
-  { id: "crackle", name: "CRACKLE", label: "Rice Krispies", color: "#FF4444", tileImage: null, detailImage: null, gameImages: {} },
-  { id: "pop", name: "POP", label: "Rice Krispies", color: "#9C27B0", tileImage: null, detailImage: null, gameImages: {} },
-];
+// ─── GAME LIBRARY ──────────────────────────────────────────────────────
+// Master list of all available games. Each character picks from this list.
+const GAME_LIBRARY = {
+  fortnite:        { id: "fortnite",        name: "FORTNITE",         genre: "Battle Royale",    color: "#7B2FBE", icon: "⛏️", style: "Stylized 3D • Cel-Shaded",       desc: "Cel-shaded with bold outlines and vibrant, stylized proportions",                                                        filter: "saturate(1.6) contrast(1.2) brightness(1.1) hue-rotate(-15deg)" },
+  roblox:          { id: "roblox",          name: "ROBLOX",           genre: "Sandbox",          color: "#E2231A", icon: "🟨", style: "Blocky Voxel • Low-Poly",        desc: "Simplified blocky geometry with flat colors and iconic proportions",                                                      filter: "saturate(0.6) contrast(1.4) brightness(1.05)" },
+  animal_crossing: { id: "animal_crossing", name: "ANIMAL CROSSING",  genre: "Life Simulation",  color: "#5D8C3E", icon: "🐶", style: "Cozy • Miniature Chibi",         desc: "Softly lit, rounded geometry with warm color palettes and a miniature, toy-box aesthetic",                                filter: "saturate(0.4) contrast(1.5) brightness(0.95) hue-rotate(-10deg)" },
+  crash:           { id: "crash",           name: "CRASH BANDICOOT",  genre: "3D Platformer",    color: "#CD3333", icon: "🦊", style: "Zany Cartoon • Exaggerated",      desc: "Vibrant, stylized environments with exaggerated character proportions, dynamic angles, and squash-and-stretch animations", filter: "saturate(1.1) contrast(1.2) brightness(0.85) sepia(0.2)" },
+  minecraft:       { id: "minecraft",       name: "MINECRAFT",        genre: "Sandbox Survival", color: "#5D8C3E", icon: "⛏️", style: "Pixel Block • 16-Bit",            desc: "Pixel-art textures on cubic geometry with limited color palettes",                                                        filter: "saturate(0.4) contrast(1.5) brightness(0.95) hue-rotate(-10deg)" },
+  apex:            { id: "apex",            name: "APEX LEGENDS",     genre: "Hero Shooter",     color: "#CD3333", icon: "🎯", style: "High-Fidelity • Realistic",       desc: "Photorealistic rendering with detailed textures and realistic lighting",                                                  filter: "saturate(1.1) contrast(1.2) brightness(0.85) sepia(0.2)" },
+  cod:             { id: "cod",             name: "CALL OF DUTY",     genre: "FPS",              color: "#4A7C2E", icon: "🔫", style: "Military Realism",                desc: "Ultra-realistic military styling with tactical gear and lighting",                                                        filter: "saturate(0.9) contrast(1.3) brightness(0.8) sepia(0.15)" },
+  valorant:        { id: "valorant",        name: "VALORANT",         genre: "Tactical Shooter", color: "#FF4655", icon: "💥", style: "Stylized Competitive",            desc: "Clean stylized art with sharp edges and vibrant agent designs",                                                           filter: "saturate(1.4) contrast(1.15) brightness(1.05)" },
+  overwatch:       { id: "overwatch",       name: "OVERWATCH",        genre: "Hero Shooter",     color: "#F99E1A", icon: "🛡️", style: "Animated Hero",                  desc: "Pixar-quality stylized rendering with exaggerated proportions",                                                           filter: "saturate(1.5) contrast(1.1) brightness(1.15) hue-rotate(5deg)" },
+  gta:             { id: "gta",             name: "GTA",              genre: "Open World",       color: "#83B735", icon: "🏎️", style: "Satirical Realism",               desc: "Semi-realistic with stylized satirical edge and detailed environments",                                                   filter: "saturate(1.2) contrast(1.2) brightness(0.9) sepia(0.1)" },
+};
 
-const GAMES = [
-  { id: "fortnite", name: "FORTNITE", genre: "Battle Royale", color: "#7B2FBE", icon: "⚡", style: "Stylized 3D • Cel-Shaded", desc: "Cel-shaded with bold outlines and vibrant, stylized proportions", filter: "saturate(1.6) contrast(1.2) brightness(1.1) hue-rotate(-15deg)" },
-  { id: "roblox", name: "ROBLOX", genre: "Sandbox", color: "#E2231A", icon: "🧊", style: "Blocky Voxel • Low-Poly", desc: "Simplified blocky geometry with flat colors and iconic proportions", filter: "saturate(0.6) contrast(1.4) brightness(1.05)" },
-  { id: "animal_crossing", name: "ANIMAL CROSSING", genre: "Life Simulation", color: "#5D8C3E", icon: "⛏️", style: "Cozy • Miniature Chibi", desc: "Softly lit, rounded geometry with warm color palettes and a miniature, toy-box aesthetic", filter: "saturate(0.4) contrast(1.5) brightness(0.95) hue-rotate(-10deg)" },
-  { id: "crash", name: "CRASH BANDICOOT", genre: "3D Platformer", color: "#CD3333", icon: "🎯", style: "Zany Cartoon • Exaggerated", desc: "Vibrant, stylized environments with exaggerated character proportions, dynamic angles, and squash-and-stretch animations", filter: "saturate(1.1) contrast(1.2) brightness(0.85) sepia(0.2)" },
+// ─── CHARACTERS ────────────────────────────────────────────────────────
+// Each character has its own "games" array — pick game IDs from GAME_LIBRARY.
+const CHARACTERS = [
+  {
+    id: "tony", name: "TONY THE TIGER", label: "Frosted Flakes", color: "#FF6B1A",
+    tileImage: "/images/Tony/Tony The Tiger.png",
+    detailImage: "/images/Tony/Tony The Tiger.png",
+    games: ["fortnite", "roblox", "animal_crossing", "crash"],
+    gameImages: { crash: "/images/Tony/tony_crash.png", fortnite: "/images/Tony/tony_fortnite.png", animal_crossing: "/images/Tony/tony_animalcrossing.png", roblox: "/images/Tony/tony_roblox.png" },
+  },
+  {
+    id: "toucan", name: "TOUCAN SAM", label: "Froot Loops", color: "#E81C8B",
+    tileImage: "/images/Toucan/Toucan Sam.png",
+    detailImage: "/images/Toucan/Toucan Sam.png",
+    games: ["fortnite", "roblox", "animal_crossing", "crash"],
+    gameImages: { crash: "/images/Toucan/toucan_crash.png", fortnite: "/images/Toucan/toucan_fortnite.png", animal_crossing: "/images/Toucan/toucan_animalcrossing.png", roblox: "/images/Toucan/toucan_roblox.png" },
+  },
+  {
+    id: "snap", name: "SNAP", label: "Rice Krispies", color: "#4ECBFF",
+    tileImage: null, detailImage: null,
+    games: ["fortnite", "roblox", "animal_crossing", "crash"],
+    gameImages: {},
+  },
+  {
+    id: "digem", name: "DIG'EM FROG", label: "Honey Smacks", color: "#7ED321",
+    tileImage: "/images/Frog/Digem Frog.png",
+    detailImage: "/images/Frog/Digem Frog.png",
+    games: ["fortnite", "roblox", "animal_crossing", "crash"],
+    gameImages: { crash: "/images/Frog/frog_crash.png", fortnite: "/images/Frog/frog_fortnite.png", animal_crossing: "/images/Frog/frog_animalcrossing.png", roblox: "/images/Frog/frog_roblox.png" },
+  },
+  {
+    id: "cornelius", name: "CORNELIUS", label: "Corn Flakes", color: "#FFD700",
+    tileImage: null, detailImage: null,
+    games: ["fortnite", "roblox", "animal_crossing", "crash"],
+    gameImages: {},
+  },
+  {
+    id: "buzz", name: "BUZZ BEE", label: "Honey Nut Cheerios", color: "#FFB800",
+    tileImage: "/images/Buzz/Buzz Bee.png",
+    detailImage: "/images/Buzz/Buzz Bee.png",
+    games: ["fortnite", "roblox", "animal_crossing", "crash"],
+    gameImages: { crash: "/images/Buzz/buzz_crash.png", fortnite: "/images/Buzz/buzz_fortnite.png", animal_crossing: "/images/Buzz/buzz_animalcrossing.png", roblox: "/images/Buzz/buzz_roblox.png" },
+  },
+  {
+    id: "coco", name: "COCO MONKEY", label: "Coco Pops", color: "#8B4513",
+    tileImage: "/images/Coco/Coco Monkey.png",
+    detailImage: "/images/Coco/Coco Monkey.png",
+    games: ["fortnite", "roblox", "animal_crossing", "crash"],
+    gameImages: { crash: "/images/Coco/coco_crash.png", fortnite: "/images/Coco/coco_fortnite.png", animal_crossing: "/images/Coco/coco_animalcrossing.png", roblox: "/images/Coco/coco_roblox.png" },
+  },
+  {
+    id: "crackle", name: "CRACKLE", label: "Rice Krispies", color: "#FF4444",
+    tileImage: null, detailImage: null,
+    games: ["fortnite", "roblox", "animal_crossing", "crash"],
+    gameImages: {},
+  },
+  {
+    id: "pop", name: "POP", label: "Rice Krispies", color: "#9C27B0",
+    tileImage: null, detailImage: null,
+    games: ["fortnite", "roblox", "animal_crossing", "crash"],
+    gameImages: {},
+  },
 ];
 
 // ╔══════════════════════════════════════════════════════════════════════╗
@@ -35,6 +95,11 @@ const GAMES = [
 // ╚══════════════════════════════════════════════════════════════════════╝
 
 const B = { void: "#000000", charcoal: "#121212", neon: "#39FF14", white: "#FFFFFF", iron: "#2C2C2C" };
+
+// Resolve a character's game IDs into full game objects from the library
+function getCharGames(ch) {
+  return (ch.games || []).map(id => GAME_LIBRARY[id]).filter(Boolean);
+}
 
 function CharImage({ src, name, color, size = 200, style: extra = {}, gameFilter = "none", gameId = null }) {
   if (src) {
@@ -177,6 +242,7 @@ function TileCard({ character:ch, index, ready, isHovered, onHover, onLeave, onC
 }
 
 function LoadingView({ character:ch, progress }) {
+  const charGames = getCharGames(ch);
   return (
     <div style={{ display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", minHeight:"80vh", padding:40 }}>
       <div style={{ position:"relative", width:180, height:180, marginBottom:24 }}>
@@ -194,8 +260,8 @@ function LoadingView({ character:ch, progress }) {
       </div>
       <div style={{ fontSize:9, color:"#555", letterSpacing:".1em" }}>PREPARING {ch.name} FOR CROSS-GAME DEPLOYMENT</div>
       <div style={{ marginTop:18, display:"flex", gap:14, flexWrap:"wrap", justifyContent:"center" }}>
-        {GAMES.map((g,i)=><div key={g.id} style={{ fontSize:8, letterSpacing:".1em", fontWeight:700, color:progress>(i+1)*20?g.color:"#333", transition:"color .3s", display:"flex", alignItems:"center", gap:3 }}>
-          <span style={{ width:4, height:4, borderRadius:"50%", background:progress>(i+1)*20?g.color:"#333", boxShadow:progress>(i+1)*20?`0 0 5px ${g.color}`:"none", transition:"all .3s" }} />{g.name}
+        {charGames.map((g,i)=><div key={g.id} style={{ fontSize:8, letterSpacing:".1em", fontWeight:700, color:progress>(i+1)*(100/charGames.length)?g.color:"#333", transition:"color .3s", display:"flex", alignItems:"center", gap:3 }}>
+          <span style={{ width:4, height:4, borderRadius:"50%", background:progress>(i+1)*(100/charGames.length)?g.color:"#333", boxShadow:progress>(i+1)*(100/charGames.length)?`0 0 5px ${g.color}`:"none", transition:"all .3s" }} />{g.name}
         </div>)}
       </div>
       <div style={{ position:"fixed", top:0, left:0, right:0, height:2, background:`linear-gradient(90deg,transparent,${B.neon}44,transparent)`, animation:"scanline 1.5s linear infinite", pointerEvents:"none" }}/>
@@ -203,50 +269,40 @@ function LoadingView({ character:ch, progress }) {
   );
 }
 
-// ─── DETAIL VIEW — CYBERPUNK HUD ───────────────────────────────────────
 function DetailView({ character:ch, selectedGame, onGameSelect, showUI, transforming }) {
   const [hoveredGame, setHoveredGame] = useState(null);
   const accent = selectedGame ? selectedGame.color : ch.color;
   const currentImage = selectedGame && ch.gameImages?.[selectedGame.id] ? ch.gameImages[selectedGame.id] : (ch.detailImage || ch.tileImage);
   const currentFilter = selectedGame && !ch.gameImages?.[selectedGame.id] ? selectedGame.filter : "none";
   const currentGameOverlay = selectedGame && !ch.gameImages?.[selectedGame.id] ? selectedGame.id : null;
+  const charGames = getCharGames(ch);
 
   return (
     <div style={{ height:"calc(100vh - 49px)", overflow:"hidden", display:"flex", flexDirection:"column", position:"relative" }}>
-      {/* BG effects */}
       <div style={{ position:"absolute", top:"15%", left:"50%", transform:"translateX(-50%)", width:"60vw", height:"60vw", maxWidth:700, maxHeight:700, borderRadius:"50%", background:`radial-gradient(circle,${accent}15 0%,${accent}08 30%,transparent 70%)`, transition:"background .8s", pointerEvents:"none", zIndex:0, animation:"pulseGlow 4s ease-in-out infinite" }} />
       <div style={{ position:"absolute", inset:0, pointerEvents:"none", zIndex:0, backgroundImage:`repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,255,255,.012) 3px,rgba(255,255,255,.012) 4px)`, opacity:.4 }} />
       <div style={{ position:"absolute", left:0, right:0, height:1, zIndex:1, background:`linear-gradient(90deg,transparent,${B.neon}22,transparent)`, animation:"hudScan 4s linear infinite", pointerEvents:"none" }} />
 
-      {/* Main content */}
       <div style={{ flex:1, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", position:"relative", zIndex:2, padding:"8px 20px" }}>
-
-        {/* Name + status */}
         <div style={{ textAlign:"center", marginBottom:10, opacity:showUI?1:0, transform:showUI?"translateY(0)":"translateY(-10px)", transition:"all .4s ease-out" }}>
           <div style={{ fontSize:9, letterSpacing:".3em", color:`${accent}cc`, fontWeight:800, marginBottom:2, transition:"color .5s" }}>{ch.label.toUpperCase()}</div>
           <h2 style={{ fontSize:"clamp(28px,4vw,50px)", fontWeight:900, letterSpacing:".03em", textTransform:"uppercase", lineHeight:1, textShadow:`0 0 40px ${accent}33` }}>{ch.name}</h2>
           {selectedGame && <div style={{ marginTop:4, fontSize:10, letterSpacing:".18em", color:selectedGame.color, fontWeight:700, animation:"fadeUp .3s ease-out", textShadow:`0 0 12px ${selectedGame.color}44` }}>{selectedGame.icon} {selectedGame.style.toUpperCase()}</div>}
         </div>
 
-        {/* Character arena */}
         <div style={{ position:"relative", width:"min(380px,52vw)", height:"min(420px,58vw)", display:"flex", alignItems:"center", justifyContent:"center" }}>
-          {/* HUD corners */}
           {["top-left","top-right","bottom-left","bottom-right"].map(p => <HudCorner key={p} pos={p} color={accent} show={showUI} />)}
-
-          {/* Side readouts - left */}
           <div style={{ position:"absolute", left:-65, top:"50%", transform:"translateY(-50%)", opacity:showUI?1:0, animation:showUI?"fadeInLeft .4s ease-out .2s both":"none" }}>
             <SideReadout label="MODEL" value="READY" color={B.neon} />
             <SideReadout label="TEXTURES" value="MAPPED" color={B.neon} />
             <SideReadout label="SKELETON" value="BOUND" color={B.neon} />
           </div>
-          {/* Side readouts - right */}
           <div style={{ position:"absolute", right:-65, top:"50%", transform:"translateY(-50%)", opacity:showUI?1:0, animation:showUI?"fadeInRight .4s ease-out .3s both":"none" }}>
             <SideReadout label="ANIMS" value="24" color={accent} align="right" />
             <SideReadout label="POLY" value="48.2K" color={accent} align="right" />
             <SideReadout label="LOD" value="3" color={accent} align="right" />
           </div>
 
-          {/* Character card */}
           <div style={{
             width:"100%", height:"100%", borderRadius:20, position:"relative", overflow:"hidden",
             background:`${B.charcoal}cc`,
@@ -263,18 +319,15 @@ function DetailView({ character:ch, selectedGame, onGameSelect, showUI, transfor
             {selectedGame && !transforming && (
               <div style={{ position:"absolute", bottom:14, left:"50%", transform:"translateX(-50%)", padding:"5px 16px", borderRadius:10, background:selectedGame.color, color:B.white, fontSize:9, fontWeight:800, letterSpacing:".12em", animation:"fadeUp .3s ease-out", boxShadow:`0 4px 16px ${selectedGame.color}66` }}>{selectedGame.icon} {selectedGame.name}</div>
             )}
-            {/* Inner scanlines */}
             <div style={{ position:"absolute", inset:0, pointerEvents:"none", backgroundImage:"repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,255,255,.015) 3px,rgba(255,255,255,.015) 4px)" }} />
           </div>
 
-          {/* Particles */}
           {transforming && <div style={{ position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)" }}><ParticleBurst color={selectedGame?.color||B.neon} /></div>}
           {transforming && <div style={{ position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)", width:120, height:120, borderRadius:"50%", border:`2px solid ${selectedGame?.color||B.neon}`, animation:"ringExpand .6s ease-out forwards", pointerEvents:"none" }} />}
         </div>
 
-        {/* Game selector strip */}
         <div style={{ display:"flex", gap:10, marginTop:16, justifyContent:"center", flexWrap:"wrap", opacity:showUI?1:0, transition:"opacity .4s .15s" }}>
-          {GAMES.map((game,i) => {
+          {charGames.map((game,i) => {
             const isSel = selectedGame?.id === game.id;
             const isHov = hoveredGame === game.id;
             return (
@@ -300,7 +353,6 @@ function DetailView({ character:ch, selectedGame, onGameSelect, showUI, transfor
           })}
         </div>
 
-        {/* Status bar */}
         {showUI && (
           <div style={{ marginTop:12, display:"flex", alignItems:"center", gap:20, animation:"fadeUp .4s ease-out .4s both" }}>
             {selectedGame ? <>
@@ -314,7 +366,6 @@ function DetailView({ character:ch, selectedGame, onGameSelect, showUI, transfor
         )}
       </div>
 
-      {/* Bottom CTA bar */}
       {showUI && (
         <div style={{ padding:"10px 24px", borderTop:`1px solid ${B.iron}`, display:"flex", alignItems:"center", justifyContent:"center", gap:8, background:`${B.charcoal}55`, animation:"fadeUp .35s ease-out .5s both" }}>
           <span style={{ width:5, height:5, borderRadius:"50%", background:B.neon, boxShadow:`0 0 6px ${B.neon}` }} />
