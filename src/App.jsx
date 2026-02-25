@@ -45,9 +45,10 @@ const CHARACTERS = [
   },
   {
     id: "snap", name: "SNAP", label: "Rice Krispies", color: "#4ECBFF",
-    tileImage: null, detailImage: null,
+    tileImage: "/images/Snap/Snap.png",
+    detailImage: "/images/Snap/Snap.png",
     games: ["fortnite", "roblox", "animal_crossing", "crash"],
-    gameImages: {},
+    gameImages: {crash: "/images/Snap/snap_crash.png", fortnite: "/images/Snap/snap_fortnite.png", animal_crossing: "/images/Snap/snap_animalcrossing.png", roblox: "/images/Snap/snap_roblox.png"},
   },
   {
     id: "digem", name: "DIG'EM FROG", label: "Honey Smacks", color: "#7ED321",
@@ -58,9 +59,10 @@ const CHARACTERS = [
   },
   {
     id: "cornelius", name: "CORNELIUS", label: "Corn Flakes", color: "#FFD700",
-    tileImage: null, detailImage: null,
+    tileImage: "/images/Cornelius/Cornelius.png",
+    detailImage: "/images/Cornelius/Cornelius.png",
     games: ["fortnite", "roblox", "animal_crossing", "crash"],
-    gameImages: {},
+    gameImages: { crash: "/images/Cornelius/cornelius_crash.png", fortnite: "/images/Cornelius/cornelius_fortnite.png", animal_crossing: "/images/Cornelius/cornelius_animalcrossing.png", roblox: "/images/Cornelius/cornelius_roblox.png" },
   },
   {
     id: "buzz", name: "BUZZ BEE", label: "Honey Nut Cheerios", color: "#FFB800",
@@ -78,15 +80,17 @@ const CHARACTERS = [
   },
   {
     id: "crackle", name: "CRACKLE", label: "Rice Krispies", color: "#FF4444",
-    tileImage: null, detailImage: null,
+    tileImage: "/images/Crackle/Crackle.png",
+    detailImage: "/images/Crackle/Crackle.png",
     games: ["fortnite", "roblox", "animal_crossing", "crash"],
-    gameImages: {},
+    gameImages: { crash: "/images/Crackle/crackle_crash.png", fortnite: "/images/Crackle/crackle_fortnite.png", animal_crossing: "/images/Crackle/crackle_animalcrossing.png", roblox: "/images/Crackle/crackle_roblox.png" },
   },
   {
     id: "pop", name: "POP", label: "Rice Krispies", color: "#9C27B0",
-    tileImage: null, detailImage: null,
+    tileImage: "/images/Pop/Pop.png",
+    detailImage: "/images/Pop/Pop.png",
     games: ["fortnite", "roblox", "animal_crossing", "crash"],
-    gameImages: {},
+    gameImages: { crash: "/images/Pop/pop_crash.png", fortnite: "/images/Pop/pop_fortnite.png", animal_crossing: "/images/Pop/pop_animalcrossing.png", roblox: "/images/Pop/pop_roblox.png" },
   },
 ];
 
