@@ -48,7 +48,7 @@ const CHARACTERS = [
     tileImage: "/images/Snap/Snap.png",
     detailImage: "/images/Snap/Snap.png",
     games: ["fortnite", "roblox", "animal_crossing", "crash"],
-    gameImages: {crash: "/images/Snap/snap_crash.png", fortnite: "/images/Snap/snap_fortnite.png", animal_crossing: "/images/Snap/snap_animalcrossing.png", roblox: "/images/Snap/snap_roblox.png"},
+    gameImages: { crash: "/images/Snap/snap_crash.png", fortnite: "/images/Snap/snap_fortnite.png", animal_crossing: "/images/Snap/snap_animalcrossing.png", roblox: "/images/Snap/snap_roblox.png" },
   },
   {
     id: "digem", name: "DIG'EM FROG", label: "Honey Smacks", color: "#7ED321",
